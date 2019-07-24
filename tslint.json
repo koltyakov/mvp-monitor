@@ -1,0 +1,11 @@
+{
+  "extends": "tslint-config-standard",
+  "rules": {
+    "semicolon": [true, "always", "ignore-interfaces"],
+    "space-before-function-paren": false,
+    "trailing-comma": true,
+    "no-unused-variable": false,
+    "strict-type-predicates": false,
+    "no-console": false
+  }
+}
