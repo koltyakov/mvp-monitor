@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<pnp:Provisioning
+  xmlns:pnp="http://schemas.dev.office.com/PnP/2018/05/ProvisioningSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.dev.office.com/PnP/2018/05/ProvisioningSchema https://raw.githubusercontent.com/OfficeDev/PnP-Provisioning-Schema/master/OfficeDevPnP.ProvisioningSchema/ProvisioningSchema-2018-05.xsd">
+  <pnp:Preferences Generator="Manual">
+    <pnp:Parameters>
+      <pnp:Parameter Key="Solution">MVP-MONITOR</pnp:Parameter>
+    </pnp:Parameters>
+  </pnp:Preferences>
+  <pnp:Templates ID="MVP-MONITOR-TEMPLATE">
+    <pnp:ProvisioningTemplate ID="MVP-MONITOR" Version="1.0">
+      <pnp:SiteFields>
+        <Field ID="{70f575bc-3562-43d8-bd9d-9d410050f007}" Name="MvpStats" DisplayName="MVP Stats" Group="{parameter:Solution}" Type="Note" NumLines="6" RichText="FALSE" RichTextMode="Compatible" />
+        <Field ID="{371118ce-883b-49f7-a28a-d4a0745b89f4}" Name="StatsDate" DisplayName="Stats Date" Group="{parameter:Solution}" Type="DateTime" />
+      </pnp:SiteFields>
+      <pnp:ContentTypes>
+        <pnp:ContentType ID="0x01004762A03799064120A80197B4AEBD41E8" Name="MVP Stats" Group="{parameter:Solution}">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" Required="false" />
+            <pnp:FieldRef ID="{70f575bc-3562-43d8-bd9d-9d410050f007}" Name="MvpStats" Required="true" />
+            <pnp:FieldRef ID="{371118ce-883b-49f7-a28a-d4a0745b89f4}" Name="StatsDate" Required="true" />
+          </pnp:FieldRefs>
+        </pnp:ContentType>
+      </pnp:ContentTypes>
+      <pnp:Lists>
+        <pnp:ListInstance Title="MVP Stats" TemplateType="100" Url="Lists/MvpStats" EnableVersioning="true" ContentTypesEnabled="true" RemoveExistingContentTypes="true" Hidden="false">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01004762A03799064120A80197B4AEBD41E8" Default="true" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views RemoveExistingViews="true">
+            <View Name="{964ee585-2327-4d4b-9194-dce311d08c45}" DefaultView="TRUE" DisplayName="All Items" Url="{site}/Lists/MvpStats/AllItems.aspx">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" Ascending="false" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="MvpStats" />
+                <FieldRef Name="StatsDate" />
+              </ViewFields>
+            </View>
+          </pnp:Views>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
