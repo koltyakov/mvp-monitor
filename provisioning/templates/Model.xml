@@ -12,7 +12,7 @@
     <pnp:ProvisioningTemplate ID="MVP-MONITOR" Version="1.0">
       <pnp:SiteFields>
         <Field ID="{70f575bc-3562-43d8-bd9d-9d410050f007}" Name="MvpStats" DisplayName="MVP Stats" Group="{parameter:Solution}" Type="Note" NumLines="6" RichText="FALSE" RichTextMode="Compatible" />
-        <Field ID="{371118ce-883b-49f7-a28a-d4a0745b89f4}" Name="StatsDate" DisplayName="Stats Date" Group="{parameter:Solution}" Type="DateTime" />
+        <Field ID="{371118ce-883b-49f7-a28a-d4a0745b89f4}" Name="StatsDate" DisplayName="Stats Date" Group="{parameter:Solution}" Type="DateTime" Format="DateOnly" />
       </pnp:SiteFields>
       <pnp:ContentTypes>
         <pnp:ContentType ID="0x01004762A03799064120A80197B4AEBD41E8" Name="MVP Stats" Group="{parameter:Solution}">
