@@ -14,3 +14,10 @@ export const flattify = (mvps: MVP[]): PivotItem[] => {
     return pi;
   }, []);
 };
+
+export const trimNames = (mvps: MVP[]): MVP[] => {
+  return mvps.map((mvp) => {
+    delete mvp.name;
+    return mvp;
+  });
+};

@@ -11,14 +11,16 @@
   <pnp:Templates ID="MVP-MONITOR-TEMPLATE">
     <pnp:ProvisioningTemplate ID="MVP-MONITOR" Version="1.0">
       <pnp:SiteFields>
-        <Field ID="{70f575bc-3562-43d8-bd9d-9d410050f007}" Name="MvpStats" DisplayName="MVP Stats" Group="{parameter:Solution}" Type="Note" NumLines="6" RichText="FALSE" RichTextMode="Compatible" />
+        <Field ID="{8d1c9666-610b-472f-857f-8df71466c3cd}" Name="StatsCRC" DisplayName="Stats CRC" Group="{parameter:Solution}" Type="Text" />
+        <Field ID="{70f575bc-3562-43d8-bd9d-9d410050f007}" Name="MvpStats" DisplayName="MVP Stats" Group="{parameter:Solution}" Type="Note" NumLines="6" RichText="false" RichTextMode="Compatible" />
         <Field ID="{371118ce-883b-49f7-a28a-d4a0745b89f4}" Name="StatsDate" DisplayName="Stats Date" Group="{parameter:Solution}" Type="DateTime" Format="DateOnly" />
       </pnp:SiteFields>
       <pnp:ContentTypes>
         <pnp:ContentType ID="0x01004762A03799064120A80197B4AEBD41E8" Name="MVP Stats" Group="{parameter:Solution}">
           <pnp:FieldRefs>
-            <pnp:FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" Required="false" />
+            <pnp:FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" Required="true" />
             <pnp:FieldRef ID="{70f575bc-3562-43d8-bd9d-9d410050f007}" Name="MvpStats" Required="true" />
+            <pnp:FieldRef ID="{8d1c9666-610b-472f-857f-8df71466c3cd}" Name="StatsCRC" Required="true" />
             <pnp:FieldRef ID="{371118ce-883b-49f7-a28a-d4a0745b89f4}" Name="StatsDate" Required="true" />
           </pnp:FieldRefs>
         </pnp:ContentType>
@@ -29,15 +31,16 @@
             <pnp:ContentTypeBinding ContentTypeID="0x01004762A03799064120A80197B4AEBD41E8" Default="true" />
           </pnp:ContentTypeBindings>
           <pnp:Views RemoveExistingViews="true">
-            <View Name="{964ee585-2327-4d4b-9194-dce311d08c45}" DefaultView="TRUE" DisplayName="All Items" Url="{site}/Lists/MvpStats/AllItems.aspx">
+            <View Name="{964ee585-2327-4d4b-9194-dce311d08c45}" DefaultView="true" DisplayName="All Items" Url="{site}/Lists/MvpStats/AllItems.aspx">
               <Query>
                 <OrderBy>
-                  <FieldRef Name="ID" Ascending="false" />
+                  <FieldRef Name="StatsDate" Ascending="false" />
                 </OrderBy>
               </Query>
               <ViewFields>
                 <FieldRef Name="LinkTitle" />
                 <FieldRef Name="MvpStats" />
+                <FieldRef Name="StatsCRC" />
                 <FieldRef Name="StatsDate" />
               </ViewFields>
             </View>

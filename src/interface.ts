@@ -1,6 +1,6 @@
 export interface MVP {
   id: string;
-  name: string;
+  name?: string;
   categories: string[];
   country: string;
 }

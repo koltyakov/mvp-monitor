@@ -33,6 +33,7 @@
   "dependencies": {
     "@pnp/pnpjs": "^1.3.4",
     "cheerio": "^1.0.0-rc.3",
+    "crc-32": "^1.2.0",
     "node-fetch": "^2.6.0",
     "sp-pnp-node": "^2.1.6"
   }
