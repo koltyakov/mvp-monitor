@@ -22,6 +22,12 @@ body {
   display: inline-block;
   vertical-align: top;
   font-size: 1.1em;
+  font-weight: 500;
+}
+.header .beta {
+  font-size: 0.6em;
+  font-weight: 100;
+
 }
 .header .what-is-mvp {
   display: block;
