@@ -1,0 +1,79 @@
+body, html {
+  height: 100%;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #ffffff;
+  color: #333333;
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+.header {
+  background-color: #0072c6;
+  color: white;
+  height: 52px;
+  line-height: 52px;
+}
+.header .logo {
+  padding-left: 20px;
+  height: 52px;
+}
+.header .name {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.1em;
+}
+.header .what-is-mvp {
+  display: block;
+  font-size: 0.8em;
+  float: right;
+  margin-right: 20px;
+  color: #efefef;
+  text-decoration: none;
+}
+.footer-stripe {
+  background-color: #eaeaea;
+  width: 100%;
+  height: 36px;
+  position: absolute;
+  bottom: 0px;
+  border-top: 1px solid #d0d0d0;
+  z-index: 1;
+}
+.power-bi {
+  width: 100%;
+  height: calc(100% - 52px);
+  border: 0px;
+  position: absolute;
+}
+.github-info {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding-right: 15px;
+  background-color: #eaeaea;
+  border-top: 1px solid #d0d0d0;
+  width: calc(50% - 90px);
+  text-align: right;
+  z-index: 1;
+}
+.github-link {
+  cursor: pointer;
+  font-family: 'Segoe UI Semibold',wf_segoe-ui_semibold,helvetica,arial,sans-serif;
+  color: #000;
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  line-height: 36px;
+  margin-right: 5px;
+  font-weight: 600;
+  font-size: 9pt;
+}
+.github-widget {
+  display: inline-block;
+  height: 36px;
+}
+.github-widget > span {
+  display: block;
+  margin-top: 4px;
+}
