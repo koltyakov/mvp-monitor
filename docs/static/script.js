@@ -15,6 +15,7 @@ function getReportUrl(type) {
 }
 
 function setReportUrl(reportUrl) {
+  document.querySelector('.footer-stripe').hidden = false;
   var iframe = document.querySelector('.power-bi');
   iframe.setAttribute('src', reportUrl);
 }

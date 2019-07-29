@@ -60,6 +60,7 @@ body {
   background-color: #eaeaea;
   border-top: 1px solid #d0d0d0;
   width: calc(50% - 90px);
+  min-width: 170px;
   text-align: right;
   z-index: 1;
 }
