@@ -21,20 +21,20 @@
   },
   "homepage": "https://github.com/koltyakov/mvp-monitor#readme",
   "devDependencies": {
-    "@types/cheerio": "^0.22.12",
-    "@types/node": "^12.6.8",
-    "@types/node-fetch": "^2.5.0",
-    "node-sp-auth-config": "^2.6.7",
-    "ts-node": "^8.3.0",
-    "tslint": "^5.18.0",
-    "tslint-config-standard": "^8.0.1",
-    "typescript": "^3.5.3"
+    "@types/cheerio": "^0.22.16",
+    "@types/node": "^13.7.0",
+    "@types/node-fetch": "^2.5.4",
+    "node-sp-auth-config": "^2.9.2",
+    "ts-node": "^8.6.2",
+    "tslint": "^6.0.0",
+    "tslint-config-standard": "^9.0.0",
+    "typescript": "^3.7.5"
   },
   "dependencies": {
-    "@pnp/pnpjs": "^1.3.4",
+    "@pnp/sp-commonjs": "^2.0.2",
     "cheerio": "^1.0.0-rc.3",
     "crc-32": "^1.2.0",
     "node-fetch": "^2.6.0",
-    "sp-pnp-node": "^2.1.6"
+    "sp-pnp-node": "^2.2.0"
   }
 }

@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { Response } from 'node-fetch';
-import { sp, Web } from '@pnp/sp';
+import { sp, Web } from '@pnp/sp-commonjs';
 import { PnpNode } from 'sp-pnp-node';
 import { AuthConfig } from 'node-sp-auth-config';
 import * as crc from 'crc-32';
@@ -32,7 +32,7 @@ export const dumpToSP = async <T>(data: T[]): Promise<T[]> => {
     }
   });
   const fetchDate = new Date();
-  const web = new Web(siteUrl);
+  const web = Web(siteUrl);
   const list = web.lists.getByTitle('MVP Stats');
   const items = await list.items.select('Id').filter(`Title eq '${dayFormat(fetchDate)}'`).get();
   const stats = JSON.stringify(data);
@@ -52,4 +52,8 @@ export const dumpToSP = async <T>(data: T[]): Promise<T[]> => {
 
 export const dayFormat = (d: Date = new Date()): string => {
   return `${d.getFullYear()}-${`${d.getMonth() + 1}`.padStart(2, '0')}-${`${d.getDate()}`.padStart(2, '0')}`;
+};
+
+export const timeoutPromise = (timeout: number): Promise<void> => {
+  return new Promise((resolve) => setTimeout(resolve, timeout));
 };

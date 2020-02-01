@@ -1,12 +1,12 @@
 import fetch from 'node-fetch';
 import { load } from 'cheerio';
 
-import { handleResponse } from './utils';
+import { handleResponse, timeoutPromise } from './utils';
 import { MVP } from './interface';
 
 const portalUrl = 'https://mvp.microsoft.com';
 
-export const fetchMVPsPage = (page: number = 1): Promise<{ data: MVP[], hasNext: boolean; }> => {
+export const fetchMVPsPage = (page: number = 1, retries: number = 3): Promise<{ data: MVP[], hasNext: boolean; }> => {
   const url = `${portalUrl}/en-us/MvpSearch?&kw=&ps=48&pn=${page}`;
   return fetch(url, {
     method: 'GET',
@@ -30,13 +30,22 @@ export const fetchMVPsPage = (page: number = 1): Promise<{ data: MVP[], hasNext:
       });
       const hasNext = $('.pager_items > a:last-child').find('img').length !== 0;
       return { data, hasNext };
+    })
+    .catch((error) => {
+      if (retries > 0) {
+        retries -= 1;
+        // console.log(`  retry, ${retries} left`);
+        return fetchMVPsPage(page, retries);
+      }
+      throw new Error(error);
     });
 };
 
 export const fetchAllMvps = async (
   data: MVP[] = [],
   page: number = 1,
-  progress?: (page: number) => void
+  progress?: (page: number) => void,
+  timeout?: number
 ): Promise<MVP[]> => {
   if (progress) {
     progress(page);
@@ -44,6 +53,9 @@ export const fetchAllMvps = async (
   const { data: mvps, hasNext } = await fetchMVPsPage(page);
   data = data.concat(mvps);
   if (hasNext) {
+    if (typeof timeout !== 'undefined') {
+      await timeoutPromise(1000);
+    }
     return fetchAllMvps(data, page + 1, progress);
   }
   return data;
