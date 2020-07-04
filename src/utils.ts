@@ -19,7 +19,7 @@ export const dumpOnDisk = <T>(data: T[]): T[] => {
     fs.mkdirSync(folder);
   }
   const filePath = path.join(folder, `${new Date().toISOString().replace(/:/g, '-')}.json`);
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), { encoding: 'UTF8' });
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), { encoding: 'utf8' });
   return data;
 };
 
