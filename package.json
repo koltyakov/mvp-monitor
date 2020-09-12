@@ -32,7 +32,7 @@
     "@pnp/sp-commonjs": "^2.0.7",
     "cheerio": "^1.0.0-rc.3",
     "crc-32": "^1.2.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-sp-auth-config": "^3.0.1",
     "sp-pnp-node": "^3.0.0"
   }
