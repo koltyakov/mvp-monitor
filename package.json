@@ -24,21 +24,12 @@
     "@types/cheerio": "^0.22.21",
     "@types/node": "^14.10.1",
     "@types/node-fetch": "^2.5.7",
-<<<<<<< HEAD
     "ts-node": "^9.0.0",
     "tslint": "^6.1.3",
     "typescript": "^4.0.2"
   },
   "dependencies": {
     "@pnp/sp-commonjs": "^2.0.10",
-=======
-    "ts-node": "^8.10.2",
-    "tslint": "^6.1.2",
-    "typescript": "^3.9.7"
-  },
-  "dependencies": {
-    "@pnp/sp-commonjs": "^2.0.7",
->>>>>>> ff0388eaf5eb714edc88ae72209718d39b75c427
     "cheerio": "^1.0.0-rc.3",
     "crc-32": "^1.2.0",
     "node-fetch": "^2.6.1",
